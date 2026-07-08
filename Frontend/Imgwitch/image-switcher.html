@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Switcher</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: url('../Uploads/bg.jpeg') center center / cover no-repeat;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        button {
+            margin: 6px;
+        }
+
+        #preview {
+            display: block;
+            margin: 20px auto 0;
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <div class="content">
+        <button type="button" onclick="showImage('hod')">HOD</button>
+        <button type="button" onclick="showImage('spiderman')">SpiderMan</button>
+        <button type="button" onclick="showImage('nature')">Nature</button>
+
+        <img id="preview" src="" alt="Selected image">
+    </div>
+
+    <script src="image-switcher.js"></script>
+    </center>
+</body>
+</html>
